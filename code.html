@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURÉA | Fine Jewellery Maison</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d0c5b5",
+                        "primary": "#745a27",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#31302d",
+                        "on-surface-variant": "#4d463a",
+                        "surface-dim": "#dcdad5",
+                        "on-tertiary-fixed": "#221b0a",
+                        "primary-container": "#c9a96e",
+                        "inverse-on-surface": "#f3f0eb",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b9ac94",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1c19",
+                        "surface-container": "#f0ede9",
+                        "surface": "#fcf9f4",
+                        "surface-tint": "#745a27",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary": "#685d49",
+                        "surface-container-high": "#ebe8e3",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e5e2dd",
+                        "tertiary-fixed": "#f0e1c6",
+                        "inverse-primary": "#e4c285",
+                        "outline": "#7f7668",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#543d0c",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#636262",
+                        "on-surface": "#1c1c19",
+                        "primary-fixed": "#ffdea4",
+                        "on-tertiary-fixed-variant": "#4f4632",
+                        "on-tertiary-container": "#49402d",
+                        "secondary": "#5f5e5e",
+                        "tertiary-fixed-dim": "#d3c5ac",
+                        "secondary-container": "#e2dfde",
+                        "surface-container-low": "#f6f3ee",
+                        "surface-bright": "#fcf9f4",
+                        "on-primary-fixed-variant": "#5a4312",
+                        "surface-container-highest": "#e5e2dd",
+                        "background": "#fcf9f4",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#e4c285",
+                        "on-primary-fixed": "#261900"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-tablet": "40px",
+                        "margin-mobile": "20px",
+                        "section-padding": "120px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "button": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "button": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+
+        body {
+            cursor: none;
+            overflow-x: hidden;
+            background-color: #fcf9f4;
+        }
+        
+        .custom-cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #745a27;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            border-radius: 50%;
+        }
+
+        .custom-cursor-ring {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #745a27;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            border-radius: 50%;
+            transition: width 0.3s, height 0.3s, background-color 0.3s;
+        }
+
+        .cursor-hover .custom-cursor-ring {
+            width: 64px;
+            height: 64px;
+            background-color: rgba(116, 90, 39, 0.1);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fcf9f4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c9a96e;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #745a27;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #745a27;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+        }
+
+        .diamond-sep::before {
+            content: "◆";
+            margin: 0 2rem;
+            color: #c9a96e;
+            font-size: 0.8rem;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<div class="custom-cursor-dot" id="cursor-dot"></div>
+<div class="custom-cursor-ring" id="cursor-ring"></div>
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-surface/90 backdrop-blur-md flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto border-b border-transparent" id="top-nav">
+<div class="flex items-center gap-8">
+<a class="font-display-lg text-primary tracking-tighter text-[32px] md:text-[40px]" href="#">AURÉA</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link font-label-caps text-label-caps text-on-surface-variant" href="#collections">Collections</a>
+<a class="nav-link font-label-caps text-label-caps text-on-surface-variant" href="#maison">Maison</a>
+<a class="nav-link font-label-caps text-label-caps text-on-surface-variant" href="#craftsmanship">Craftsmanship</a>
+<a class="nav-link font-label-caps text-label-caps text-on-surface-variant" href="#store">Our Store</a>
+<a class="nav-link font-label-caps text-label-caps text-on-surface-variant" href="#contact">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-60 transition-opacity">favorite</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-60 transition-opacity">shopping_bag</span>
+</div>
+<a class="bg-primary text-on-primary px-6 py-3 font-button text-button uppercase tracking-widest hover:bg-on-surface transition-colors duration-300 inline-block" href="#store">Visit Us</a>
+</div>
+</header>
+<main class="pt-24">
+<section class="min-h-[921px] flex flex-col md:flex-row bg-surface">
+<div class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-margin-desktop py-12 md:py-0 reveal">
+<span class="font-label-caps text-label-caps text-primary mb-6 block">ESTABLISHED 1924</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8 leading-tight">
+                    Timeless Elegance <br/>
+<span class="italic font-light text-primary">Redefined</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-12">
+                    Discover a legacy of exceptional artistry. Each piece in our collection is a testament to a century of uncompromising craftsmanship and rare gemstone mastery.
+                </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-on-surface text-surface px-10 py-4 font-button text-button uppercase tracking-widest hover:bg-primary transition-all duration-300 inline-block" href="#collections">Explore Collection</a>
+<a class="border border-primary text-primary px-10 py-4 font-button text-button uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 inline-block" href="#store">Book Atelier</a>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative min-h-[500px]">
+<img alt="Hero Image" class="w-full h-full object-cover" data-alt="A cinematic, high-fashion lifestyle photograph of a sophisticated woman wearing layered gold diamond necklaces and statement earrings. The lighting is soft and golden, evocative of a late afternoon in a Parisian salon. The color palette consists of warm ivory tones, rich gold accents, and deep shadows, creating an atmosphere of quiet luxury and timeless sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdstHn9J94-X4L5DjCfMQXmr6U55hilWK5zY20YUk6K_0ENiqo6U24bF97pjqd5exrMcdvuLwWc1rCmT-kAVdhbs5ao9qNPRs5s6WjPhtuzpYP5NjUSg6yIdnBr0h3Zd7SPahUJ0aIZIJwIVYBMVb318OaeHnvSOJfZwqVW8Hryu0rlK_gQIQVW77doE-FfMaSyIWOxLNjc-d-bkkISU_aIm4uLQ4n_zjipNcNllN_YPfOJ_iLwg_9QxtwIvstQZoN-DYQRD9G9jI"/>
+<div class="absolute bottom-12 -left-12 md:-left-24 bg-surface p-8 max-w-sm hidden md:block border border-outline-variant/30 shadow-sm">
+<p class="font-headline-sm text-headline-sm italic text-primary mb-4">"Jewellery is the signature of a soul."</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">— MARIE-CLAUDE AURÉA</p>
+</div>
+</div>
+</section>
+<section class="bg-inverse-surface py-6 overflow-hidden">
+<div class="animate-marquee whitespace-nowrap items-center">
+<div class="flex items-center text-primary-container font-label-caps text-label-caps tracking-[0.3em] uppercase py-2">
+<span class="mx-8">Fine Jewellery</span><span class="diamond-sep">Rare Diamonds</span><span class="diamond-sep">Handcrafted</span><span class="diamond-sep">18K &amp; 22K Gold</span><span class="diamond-sep">Certified Gemstones</span><span class="diamond-sep">Bespoke Atelier</span>
+</div>
+<div class="flex items-center text-primary-container font-label-caps text-label-caps tracking-[0.3em] uppercase py-2">
+<span class="mx-8">Fine Jewellery</span><span class="diamond-sep">Rare Diamonds</span><span class="diamond-sep">Handcrafted</span><span class="diamond-sep">18K &amp; 22K Gold</span><span class="diamond-sep">Certified Gemstones</span><span class="diamond-sep">Bespoke Atelier</span>
+</div>
+</div>
+</section>
+<section class="px-6 md:px-margin-desktop py-section-padding flex flex-col md:flex-row gap-16 items-center" id="maison">
+<div class="w-full md:w-1/2 reveal flex justify-center">
+<div class="relative w-80 h-80">
+<svg class="w-full h-full fill-none stroke-primary-container stroke-[0.5]" viewbox="0 0 200 200">
+<circle cx="100" cy="100" r="90"></circle>
+<rect height="120" transform="rotate(45 100 100)" width="120" x="40" y="40"></rect>
+<path d="M100 10 L100 190 M10 100 L190 100"></path>
+<circle cx="100" cy="100" r="40"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-display-lg text-primary text-4xl">A</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 reveal">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">OUR HERITAGE</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-on-surface mb-8">A Century of Artistic Vision</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                    Founded in the heart of the golden era, AURÉA has remained a beacon of excellence for generations. Our journey began with a single vision: to transform nature's most precious materials into wearable masterpieces.
+                </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                    Today, the Maison continues to blend traditional techniques with avant-garde design, ensuring that every creation is as unique as the individual who wears it.
+                </p>
+<div class="grid grid-cols-3 border-t border-outline-variant pt-8">
+<div>
+<p class="font-display-lg text-primary text-2xl md:text-3xl mb-1">500+</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">DESIGNS</p>
+</div>
+<div>
+<p class="font-display-lg text-primary text-2xl md:text-3xl mb-1">12</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">MASTER ARTISANS</p>
+</div>
+<div>
+<p class="font-display-lg text-primary text-2xl md:text-3xl mb-1">100%</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">CERTIFIED STONES</p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 md:px-margin-desktop py-section-padding bg-surface-container-low" id="collections">
+<div class="text-center mb-16 reveal">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">SIGNATURE PIECES</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md">Curated Collections</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="group relative reveal">
+<div class="aspect-[3/4] overflow-hidden bg-surface-variant mb-4 relative">
+<img alt="Diamond Ring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An extreme close-up of a high-end diamond engagement ring set in 18K yellow gold, resting on a textured ivory silk fabric. The lighting is crisp, highlighting the facets of the central diamond and the intricate gold work. The background is softly blurred to emphasize the jewellery's craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo225Jee_X2oRbpYP8oi8KDJ00KMzOQEUOKTZSi9um4n54gCWr2GEuokozzVj4aQQqEN6MExtz1Yhzhn2qZ2LSRyLP6s-HPcc32j9LP_Ukrfz_sl8fC_TLHCtBFZnjFIFMwJrEm2XVreOUwicV6CLGg2YFgi9MBhv7SrE2qcwUb2cT-Z91ypXytm2UguTHyTQ4T8f4crXT0QJCU3-aCcGlmMltvYjNOvUShL3QsxsujSvlxwO2rURaLjfojBF2Upzy-J8p29GUOZ8"/>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Solitaire Radiance</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">From $8,500</p>
+</div>
+<div class="group relative reveal" style="transition-delay: 100ms;">
+<div class="aspect-[3/4] overflow-hidden bg-surface-variant mb-4 relative">
+<img alt="Gold Pendant" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A detailed shot of a luxury gold pendant with a deep blue sapphire center stone, hanging from a delicate chain. The piece is photographed against a minimalist champagne background with soft directional lighting that creates elegant shadows. The overall aesthetic is clean, luxurious, and focused on material quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ba126F8bGPyD-t2LtXIP7-fvTavVBaAw91ZmtbXUYBYqjcRgLSco1B-rrJiwJYE3sXUiH8Gavqa-A1y5p8zzWCbctgPm0EXmxZVPdPkmemGtEvb04KgmTS0b4dF7G0vLMbk20hnOz4Kns63_NgVETWbBiqc6xSXKKHIJiOea_ti1rANnouxCIgaLF9zPX7LMLkhquCs3hyS19_6bBT532NL87cxn2T2RyHfa24IxCIyYQvxkC63KK5082G4PKBOcAeXSOdaXAgc"/>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Celestial Drop</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">From $4,200</p>
+</div>
+<div class="group relative reveal" style="transition-delay: 200ms;">
+<div class="aspect-[3/4] overflow-hidden bg-surface-variant mb-4 relative">
+<img alt="Gold Bangle" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A collection of stacked 22K gold bangles with intricate handmade engravings. The bangles are displayed on a warm wooden surface, illuminated by natural sunlight filtering through a window, creating organic highlights and a warm, tactile feel. The style is artisanal and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGEYQQBl9v8Uv-6G4XP7bSOmKznP9Msp4VopoTyggHPkSQLwPtk1zSmhMmmvvcE_ctv9lepW1NK7g4ZrijuLYeh5Y-w-sft4krCK7wbgekYo-qcaDA3T54mdjMvGOQpFSNzUOYvVNTIGCBIsuVFcpm_99apXPnpkd_s8O-jSWqIWpfaF1ttAhLc5Rg3E5lHB_ex7ESKPLOCU9lYWrRAr55ZK-aVGcpkZ-ZUWjMlf5C2gZjrZ-7lXjeS0iEX64ekL1-SBKsgZ5Jalk"/>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Heritage Bangle</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">From $12,000</p>
+</div>
+<div class="group relative reveal" style="transition-delay: 300ms;">
+<div class="aspect-[3/4] overflow-hidden bg-surface-variant mb-4 relative">
+<img alt="Diamond Earrings" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A pair of elegant diamond cluster earrings displayed on a minimalist porcelain stand. The lighting is bright and high-key, with silver and gold reflections dancing off the diamonds. The environment is an ultra-modern showroom with a neutral, warm-toned color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHSBL1GKabg7DCOHNKyzT1s875DOaazZvW94Og6H6ZTE_EiwZblYpjTAJ8UiHemMkjjGqPfQURjuTBHkyNTCniXCaxbFJdx2ZdyqPhso_WS8ogqXW4yhMxEqY8XYgj6ahS-aFLnPdBNaVC_W8YTM71mPRXPlv21vLix-Xtiokzti_gHbCNz1X2sYr1nelQ13TbK196G710Qv3TymrHih8Iqt3oH06BsD2h6lfV7IofKEcVCTiPH-MptAHU9Rr5_AvqJnI5e3XULns"/>
+<button class="absolute top-4 right-4 bg-surface/80 p-2 rounded-full text-primary hover:bg-primary hover:text-white transition-all" onclick="toggleWishlist(this)">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Ethereal Bloom</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">From $6,800</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col md:flex-row bg-surface" id="store">
+<div class="w-full md:w-1/2 min-h-[600px] overflow-hidden reveal">
+<img alt="Atelier" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A high-contrast, black and white photograph of a jewellery artisan's workshop. Close-up on weathered hands meticulously setting a gemstone into a gold mounting using traditional jeweler's tools. The scene is lit by a single desk lamp, creating dramatic shadows and highlighting the texture of the gold and the artisan's workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC1VKbNzNrYtzodfhPkHrNWZ8YOqhuZ5Dx181yXQg_OS5DJbOCIDdEmdPvSh10r8bZ5NS-HROvhzftwUEz-4fMENAtTEqKFLnIyWVnAS72K9Zdgf9x5B7-8Yil_WGy9nQMPLMPPJGOshDJTBHJqKdqLuvoXqgesWluIC78n-gdK7bgSNo91BR52FsuABYlne9w_ny-XsyMCLqNH0dXHDlbqqpZqGqHdQPq9lwTDNxhwil-P4H0toFypdgpGBehtuNcrQJlTocuhhQ"/>
+</div>
+<div class="w-full md:w-1/2 bg-[#FAF7F2] p-12 md:p-24 flex flex-col justify-center reveal">
+<span class="font-label-caps text-label-caps text-primary mb-6 block">EXPERIENCE AURÉA</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-8">Our Flagship Atelier</h2>
+<p class="font-headline-sm text-headline-sm italic text-on-surface-variant mb-12">
+                    "Where time stands still, and dreams are cast in gold."
+                </p>
+<ul class="space-y-6 mb-12">
+<li class="flex items-start gap-4">
+<span class="text-primary mt-1">◆</span>
+<div>
+<p class="font-label-caps text-label-caps font-bold">Private Consultations</p>
+<p class="text-body-md text-on-surface-variant">One-on-one sessions with our design directors.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-primary mt-1">◆</span>
+<div>
+<p class="font-label-caps text-label-caps font-bold">Bespoke Design</p>
+<p class="text-body-md text-on-surface-variant">Create a unique piece from your own vision.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-primary mt-1">◆</span>
+<div>
+<p class="font-label-caps text-label-caps font-bold">Heirloom Restoration</p>
+<p class="text-body-md text-on-surface-variant">Specialized care for your most precious antiques.</p>
+</div>
+</li>
+</ul>
+<button class="w-full md:w-max bg-primary text-white px-12 py-5 font-button text-button uppercase tracking-widest hover:bg-on-surface transition-all duration-300">Book an Appointment</button>
+</div>
+</section>
+<section class="bg-inverse-surface py-section-padding px-6 md:px-margin-desktop relative overflow-hidden" id="craftsmanship">
+<div class="absolute inset-0 opacity-[0.03] flex items-center justify-center pointer-events-none select-none">
+<span class="font-display-lg text-[40vw] text-surface">AURÉA</span>
+</div>
+<div class="relative z-10">
+<div class="text-center mb-24 reveal">
+<span class="font-label-caps text-label-caps text-primary-container mb-4 block">THE ART OF THE POSSIBLE</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-surface">Excellence in Craft</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-gutter">
+<div class="reveal relative pt-12">
+<span class="absolute top-0 left-0 font-display-lg text-primary/20 text-8xl">01</span>
+<h3 class="font-headline-sm text-headline-sm text-surface mb-6 border-b border-primary/30 pb-4">Ethical Sourcing</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed text-surface-variant">
+                            Every diamond and gemstone is ethically sourced through the Kimberley Process, ensuring the highest standards of human rights and environmental care.
+                        </p>
+</div>
+<div class="reveal relative pt-12" style="transition-delay: 150ms;">
+<span class="absolute top-0 left-0 font-display-lg text-primary/20 text-8xl">02</span>
+<h3 class="font-headline-sm text-headline-sm text-surface mb-6 border-b border-primary/30 pb-4">Master Artistry</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed text-surface-variant">
+                            Our artisans spend hundreds of hours on a single piece, utilizing lost-wax casting and hand-filing techniques passed down through centuries.
+                        </p>
+</div>
+<div class="reveal relative pt-12" style="transition-delay: 300ms;">
+<span class="absolute top-0 left-0 font-display-lg text-primary/20 text-8xl">03</span>
+<h3 class="font-headline-sm text-headline-sm text-surface mb-6 border-b border-primary/30 pb-4">Certified Quality</h3>
+<p class="text-on-surface-variant text-body-md leading-relaxed text-surface-variant">
+                            All AURÉA pieces are accompanied by GIA certification and a lifetime authenticity guarantee from our Maison's heritage board.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container py-section-padding px-6 md:px-margin-desktop text-center relative overflow-hidden" id="contact">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(201,169,110,0.15)_0%,_transparent_70%)]"></div>
+<div class="relative z-10 max-w-2xl mx-auto reveal">
+<span class="font-label-caps text-label-caps text-primary mb-6 block">BE THE FIRST TO KNOW</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-8">Join the Maison</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Receive exclusive invitations to private viewings and new collection launches.</p>
+<form class="flex flex-col md:flex-row gap-4 items-end" id="newsletter-form">
+<div class="w-full relative">
+<input class="w-full bg-transparent border-0 border-b border-on-surface py-4 px-0 focus:ring-0 focus:border-primary font-label-caps text-label-caps placeholder:text-on-surface-variant/50" placeholder="EMAIL ADDRESS" required="" type="email"/>
+</div>
+<button class="w-full md:w-max bg-on-surface text-surface px-12 py-4 font-button text-button uppercase tracking-widest hover:bg-primary transition-all duration-300" type="submit">Subscribe</button>
+</form>
+<p class="hidden mt-6 text-primary font-label-caps text-label-caps animate-pulse" id="subscribe-msg">✓ Subscribed</p>
+</div>
+</section>
+</main>
+<footer class="bg-inverse-surface text-surface py-section-padding px-6 md:px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
+<div>
+<h2 class="font-display-lg text-primary text-3xl mb-8">AURÉA</h2>
+<p class="text-surface-variant text-body-md mb-8">The pinnacle of fine jewellery, dedicated to the preservation of heritage and the pursuit of beauty.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">camera</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-8">Collections</h4>
+<ul class="space-y-4 text-surface-variant text-body-md">
+<li><a class="hover:text-primary transition-colors" href="#collections">Heritage Gold</a></li>
+<li><a class="hover:text-primary transition-colors" href="#collections">Rare Diamonds</a></li>
+<li><a class="hover:text-primary transition-colors" href="#collections">The Atelier Series</a></li>
+<li><a class="hover:text-primary transition-colors" href="#collections">Bespoke Bridal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-8">Services</h4>
+<ul class="space-y-4 text-surface-variant text-body-md">
+<li><a class="hover:text-primary transition-colors" href="#">Care &amp; Cleaning</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sizing Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-primary transition-colors" href="#store">Book Concierge</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-8">The Maison</h4>
+<ul class="space-y-4 text-surface-variant text-body-md">
+<li><a class="hover:text-primary transition-colors" href="#maison">Our History</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Legal &amp; Privacy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-surface/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-caps text-[10px] text-surface-variant">© 2024 AURÉA FINE JEWELLERY. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8 font-label-caps text-[10px] text-surface-variant uppercase">
+<a class="hover:text-primary" href="#">Sitemap</a>
+<a class="hover:text-primary" href="#">Accessibility</a>
+<a class="hover:text-primary" href="#">Press</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth Internal Navigation JS
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Update URL hash without jump
+                        history.pushState(null, null, href);
+                    }
+                }
+            });
+        });
+
+        // Custom Cursor Logic
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        let mouseX = 0, mouseY = 0;
+        let ringX = 0, ringY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+        });
+
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.15;
+            ringY += (mouseY - ringY) * 0.15;
+            ring.style.transform = `translate(${ringX - 16}px, ${ringY - 16}px)`;
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        // Cursor Hover Effect
+        const interactiveElements = document.querySelectorAll('a, button, input, .cursor-pointer');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        // Scroll Logic: Header & Reveals
+        const header = document.getElementById('top-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'border-outline-variant/30');
+                header.classList.remove('py-4', 'border-transparent');
+            } else {
+                header.classList.remove('py-2', 'border-outline-variant/30');
+                header.classList.add('py-4', 'border-transparent');
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Wishlist Toggle
+        function toggleWishlist(btn) {
+            const icon = btn.querySelector('.material-symbols-outlined');
+            if (icon.innerText === 'favorite') {
+                icon.innerText = 'heart_check';
+                icon.style.fontVariationSettings = "'FILL' 1";
+                btn.classList.add('bg-primary', 'text-white');
+            } else {
+                icon.innerText = 'favorite';
+                icon.style.fontVariationSettings = "'FILL' 0";
+                btn.classList.remove('bg-primary', 'text-white');
+            }
+        }
+
+        // Newsletter Validation
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msg = document.getElementById('subscribe-msg');
+            msg.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => msg.classList.add('hidden'), 5000);
+        });
+    </script>
+</body></html>
